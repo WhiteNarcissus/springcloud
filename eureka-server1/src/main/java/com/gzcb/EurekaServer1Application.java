@@ -6,6 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * Created by gcb on 2019/6/13.
+ *  第一个服务 hello - service
  */
 
 @EnableDiscoveryClient

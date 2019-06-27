@@ -4,61 +4,63 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.gzcb</groupId>
-	<artifactId>springcloud</artifactId>
+	<artifactId>eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>springcloud</name>
+	<name>eureka-server</name>
 	<description>Demo project for Spring Boot</description>
 
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<jdk.version>1.8</jdk.version>
-		<junit.version>4.9</junit.version>
-	    <spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
-	</properties>
-
-    <!-- 聚合 ，目的是为了 maven 一次构建多个项目-->
-	<modules>
-	<module>eureka-server1</module>
-	<module>eureka-server</module>
-	<module>ribbon-sonsumer</module>
-	</modules>
-
-
-	<!-- 继承 ，继承为了消除重复，我们把很多相同的配置提取出来，例如：grouptId，version等 目的是为了-->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.0.RELEASE</version>
 		<relativePath/>
 	</parent>
-
-
-	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<version>2.0.0.RELEASE</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<version>1.4.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<version>1.4.4.RELEASE</version>
+		</dependency>
 	</dependencies>
-
-	<!--使用dependencyManagement 这样的好处是子模块可以有选择行的继承，而不需要全部继承。-->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
+				<version>Finchley.BUILD-SNAPSHOT</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -74,6 +76,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -82,19 +85,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	<profiles>
-	   <profile>
-		    <id>dev</id>
-		   <properties>
-	        <profiles.active>dev</profiles.active>
-	     </properties>
-	      <activation>
-	        <activeByDefault>true</activeByDefault>
-	      </activation>
-	   </profile>
-	</profiles>
-	
-	
 
 </project>
