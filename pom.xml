@@ -19,7 +19,7 @@
 	    <spring-cloud.version>Finchley.BUILD-SNAPSHOT</spring-cloud.version>
 	</properties>
 
-    <!-- èšåˆ ï¼Œç›®çš„æ˜¯ä¸ºäº† maven ä¸€æ¬¡æž„å»ºå¤šä¸ªé¡¹ç›®-->
+    <!-- ¾ÛºÏ £¬Ä¿µÄÊÇÎªÁË maven Ò»´Î¹¹½¨¶à¸öÏîÄ¿-->
 	<modules>
 	<module>eureka-server1</module>
 	<module>eureka-server</module>
@@ -27,7 +27,7 @@
 	</modules>
 
 
-	<!-- ç»§æ‰¿ ï¼Œç»§æ‰¿ä¸ºäº†æ¶ˆé™¤é‡å¤ï¼Œæˆ‘ä»¬æŠŠå¾ˆå¤šç›¸åŒçš„é…ç½®æå–å‡ºæ¥ï¼Œä¾‹å¦‚ï¼šgrouptIdï¼Œversionç­‰ ç›®çš„æ˜¯ä¸ºäº†-->
+	<!-- ¼Ì³Ð £¬¼Ì³ÐÎªÁËÏû³ýÖØ¸´£¬ÎÒÃÇ°ÑºÜ¶àÏàÍ¬µÄÅäÖÃÌáÈ¡³öÀ´£¬ÀýÈç£ºgrouptId£¬versionµÈ Ä¿µÄÊÇÎªÁË-->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -52,7 +52,7 @@
 
 	</dependencies>
 
-	<!--ä½¿ç”¨dependencyManagement è¿™æ ·çš„å¥½å¤„æ˜¯å­æ¨¡å—å¯ä»¥æœ‰é€‰æ‹©è¡Œçš„ç»§æ‰¿ï¼Œè€Œä¸éœ€è¦å…¨éƒ¨ç»§æ‰¿ã€‚-->
+	<!--Ê¹ÓÃdependencyManagement ÕâÑùµÄºÃ´¦ÊÇ×ÓÄ£¿é¿ÉÒÔÓÐÑ¡ÔñÐÐµÄ¼Ì³Ð£¬¶ø²»ÐèÒªÈ«²¿¼Ì³Ð¡£-->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
